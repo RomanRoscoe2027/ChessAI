@@ -1,2 +1,4 @@
 # ChessAI
-A mini version control system, designed to initialize repos, stage files, save changes, and view log history.
+Fully in c++, a Chess engine that allows you to play against AI of various difficulties.
+
+
