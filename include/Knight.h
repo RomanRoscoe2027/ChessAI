@@ -10,7 +10,7 @@ class Knight: public Piece{
         bool isValidMove(int startX, int startY, int endX, int endY) const override;
         //check if logical move, will implement blocking logic and such later
 
-}
+};
 
 
-#endif //KNIGHT_H
+#endif //KNIGHT_H 
