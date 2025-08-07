@@ -1,9 +1,10 @@
-
+#include "Board.h"
 #include <iostream>
 #include <vector>
 #include <string>
 
-
 int main() {
-    std::cout << "Hello World!" << std::endl;
+    Board board;           // This calls the constructor, which sets up the board
+    board.printBoard();    // This prints the current state to the terminal
+    return 0;
 }

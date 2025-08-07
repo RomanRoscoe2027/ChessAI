@@ -1,6 +1,6 @@
 #include "Piece.h"
 
-Piece::Piece(char symbol, bool isWhite, PieceType type): symbol(symbol), isWhite(isWhite), type(piece) {}
+Piece::Piece(char symbol, bool isWhite, PieceType type): symbol(symbol), isWhite(isWhite), type(type) {}
 
 Piece::~Piece() {}
 
