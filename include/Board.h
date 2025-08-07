@@ -12,9 +12,15 @@ private:
 //set up board as 2d array with pieces as main focus
 public:
     Board();
-    void setBoard(auto &grid);
+    void setBoard(auto&& grid);
+    void initializeStandardBoard();
     //beginning of games, set up pieces restarting game etc
-    void printboard() const;
+    //auto only works in c++20 for func params, careful boy
+    //double apersand for r and l values, not really needed but useful to know
+
+    //internet suggests seperate initialize board and setboard functions... mmmffff
+    //EDIT an hour later - makes sense, dont want to set board manually everytime
+    void printBoard() const;
     //after every move/turn board must be updated
    
     Piece* getPiece(int startX, int startY);
