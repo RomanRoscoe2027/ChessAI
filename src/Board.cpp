@@ -32,7 +32,7 @@ void Board::initializeStandardBoard() {
     grid[7][0] = std::make_unique<Rook>(false);
     grid[7][1] = std::make_unique<Knight>(false);
     grid[7][2] = std::make_unique<Bishop>(false);
-    grid[7][3] = std::make_unique<Queen>(true);
+    grid[7][3] = std::make_unique<Queen>(false);
     grid[7][5] = std::make_unique<Bishop>(false);
     grid[7][6] = std::make_unique<Knight>(false);
     grid[7][7] = std::make_unique<Rook>(false);
@@ -56,6 +56,8 @@ void Board::printBoard() const{
     std::cout << "  a b c d e f g h\n\n";
 }
 
-
+Piece* Board::getPiece(int startX, int startY) const{
+    return grid[startX][startY].get();
+}
 
 
