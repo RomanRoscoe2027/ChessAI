@@ -1,7 +1,8 @@
 #include "Board.h"
 #include "Knight.h"
 #include "Rook.h"
-
+#include "Bishop.h"
+#include "Queen.h"
 #include <iostream>
 
 Board::Board(){
@@ -21,12 +22,18 @@ void Board::initializeStandardBoard() {
     
     grid[0][0] = std::make_unique<Rook>(true);
     grid[0][1] = std::make_unique<Knight>(true);
+    grid[0][2] = std::make_unique<Bishop>(true);
+    grid[0][3] = std::make_unique<Queen>(true);
+    grid[0][5] = std::make_unique<Bishop>(true);
     grid[0][6] = std::make_unique<Knight>(true);
     grid[0][7] = std::make_unique<Rook>(true);
 
     //black pieces (top)
     grid[7][0] = std::make_unique<Rook>(false);
     grid[7][1] = std::make_unique<Knight>(false);
+    grid[7][2] = std::make_unique<Bishop>(false);
+    grid[7][3] = std::make_unique<Queen>(true);
+    grid[7][5] = std::make_unique<Bishop>(false);
     grid[7][6] = std::make_unique<Knight>(false);
     grid[7][7] = std::make_unique<Rook>(false);
 
@@ -46,5 +53,9 @@ void Board::printBoard() const{
         }
     std::cout << "\n";
     }
-    std::cout << " a b c d e f g h\n\n";
+    std::cout << "  a b c d e f g h\n\n";
 }
+
+
+
+
