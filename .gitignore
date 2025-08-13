@@ -1,0 +1,13 @@
+# Ignore build artifacts
+/build/
+*.o
+*.obj
+*.exe
+*.out
+*.a
+*.so
+*.dll
+
+# Ignore IDE/editor configs (optional)
+.vscode/
+.idea/
