@@ -5,7 +5,7 @@ Knight::Knight(bool isWhite)
 
 
 //map out knight movement, moves in L shape
-bool Knight::isValidMove(int startX, int startY, int endX, int endY) const{
+bool Knight::isValidMove(int startX, int startY, int endX, int endY, const Board& grid) const{
     //use if branching to determimne if moving more vertically or horizontally, check for validity
     if((startX + 1 != endX) && (startX - 1 != endX)){
         return (((startX + 2 == endX) || (startX - 2 == endX)) && ((startY + 1 == endY) || (startY - 1 == endY)));
