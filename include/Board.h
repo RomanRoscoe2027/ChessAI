@@ -23,8 +23,9 @@ public:
     void printBoard() const;
     //after every move/turn board must be updated
    
-    Piece* getPiece(int startX, int startY) const;
+    const Piece* getPiece(int startX, int startY) const;
     //access piece at grid square
     bool movePiece(int startX, int endX, int startY, int endY, Piece* piece);
+    bool isEmpty(int xcord, int ycord);
 };
 #endif //BOARD_H

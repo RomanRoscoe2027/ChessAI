@@ -56,8 +56,9 @@ void Board::printBoard() const{
     std::cout << "  a b c d e f g h\n\n";
 }
 
-Piece* Board::getPiece(int startX, int startY) const{
-    return grid[startX][startY].get();
+const Piece* Board::getPiece(int startX, int startY) const{
+    return (grid[startX][startY].get());
 }
-
-
+bool Board::isEmpty(int xcord, int ycord){
+    return (getPiece(xcord,ycord) == nullptr);
+}
