@@ -1,7 +1,7 @@
 #ifndef BOARD_H
 #define BOARD_H
 
-#include "Piece.h"
+class Piece;
 #include <vector>
 #include <memory> //unique ptrs
 //choosing vector for board, despite fixed size, for bound checking
@@ -12,6 +12,7 @@ private:
 //set up board as 2d array with pieces as main focus
 public:
     Board();
+    ~Board();   // needed because of forward declaration of piece in board.cpp, which then attempts to create unique ptrs, which cant kill themselves until they know the size, and theres your damn issue.
     void setBoard(auto&& grid);
     void initializeStandardBoard();
     //beginning of games, set up pieces restarting game etc
@@ -28,4 +29,4 @@ public:
     bool movePiece(int startX, int endX, int startY, int endY, Piece* piece);
     bool isEmpty(int xcord, int ycord);
 };
-#endif //BOARD_H
+#endif //BOARD_H;

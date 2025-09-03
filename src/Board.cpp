@@ -1,9 +1,12 @@
 #include "Board.h"
+#include "Piece.h"
 #include "Knight.h"
 #include "Rook.h"
 #include "Bishop.h"
 #include "Queen.h"
 #include <iostream>
+
+
 
 Board::Board(){
     /**grid.resize(8,std::vector<std::unique_ptr<Piece>>(8));
@@ -16,6 +19,7 @@ Board::Board(){
     initializeStandardBoard();
 
 }
+Board::~Board() = default; // sigh. forward declaration needs this so piece can fully be defined.
 
 void Board::initializeStandardBoard() {
     //white pieces (bottom)

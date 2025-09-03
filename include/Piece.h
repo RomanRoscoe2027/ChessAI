@@ -1,7 +1,8 @@
 #ifndef PIECE_H
 #define PIECE_H
 
-#include "Board.h"
+class Board;
+
 #include <string>
 enum class PieceType {
     PAWN,
@@ -24,7 +25,7 @@ public:
     bool getIsWhite() const;
     PieceType getPieceType () const;
     
-    virtual bool isValidMove(int startX, int startY, int endX, int endY, Board& grid) const = 0;
+    virtual bool isValidMove(int startX, int startY, int endX, int endY, const Board& grid) const = 0;
     
 };
 
