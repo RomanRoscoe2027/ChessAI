@@ -42,5 +42,3 @@ Planned features include:
 - **Environment:** Linux (Ubuntu/WSL)
 
 ---
-
-## 📂 Project Structure
