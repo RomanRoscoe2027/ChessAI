@@ -14,7 +14,7 @@ bool Pawn::isValidMove(int startX, int startY, int endX, int endY, const Board& 
     const int dir = isWhite ? 1 : -1;
     //define logic just for single step w obstruction
 
-    /*if(grid.inBounds(endX,endY) == false)
+    //if(grid.inBounds(endX,endY) == false)
 
     if (dir == 1  && dY ==1){
         return(grid.isEmpty(endX,endY));
@@ -29,7 +29,19 @@ bool Pawn::isValidMove(int startX, int startY, int endX, int endY, const Board& 
     }
     else if (dir == 1 && dX ==2 && startY == startRank){
         return(grid.isEmpty(endX,endY) && grid.isEmpty(endX+dir, endY+dir));//same
-    }*/
+    }
     
-    return false; //just for now
+    //take diag as pawn if opposing piece obv opposition
+    if (abs(dX) == 1 && dY == dir) {
+        const Piece* target = grid.getPiece(endX, endY);
+        if (target != nullptr && target->getIsWhite() != this->isWhite) {
+            return true; 
+        }
+    }
+
 }
+
+/*MUST add en passant as well as promotion when time comes.
+ Don't anticipate it being too bad though.
+ For now basic move logic and taking for pawns is excellent development.
+*/

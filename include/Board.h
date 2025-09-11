@@ -1,9 +1,10 @@
 #ifndef BOARD_H
 #define BOARD_H
+#include "Piece.h"   // <-- must include this for unique_ptr<Piece>
 
-class Piece;
 #include <vector>
-#include <memory> //unique ptrs
+#include <memory> 
+//unique ptrs
 //choosing vector for board, despite fixed size, for bound checking
 class Board{
 private:
@@ -12,7 +13,7 @@ private:
 //set up board as 2d array with pieces as main focus
 public:
     Board();
-    ~Board();   // needed because of forward declaration of piece in board.cpp, which then attempts to create unique ptrs, which cant kill themselves until they know the size, and theres your damn issue.
+    ~Board() = default;
     void setBoard(auto&& grid);
     void initializeStandardBoard();
     //beginning of games, set up pieces restarting game etc
@@ -27,6 +28,6 @@ public:
     const Piece* getPiece(int startX, int startY) const;
     //access piece at grid square
     bool movePiece(int startX, int endX, int startY, int endY, Piece* piece);
-    bool isEmpty(int xcord, int ycord);
+    bool isEmpty(int xcord, int ycord)const;
 };
-#endif //BOARD_H;
+#endif //BOARD_H

@@ -4,6 +4,7 @@
 #include "Rook.h"
 #include "Bishop.h"
 #include "Queen.h"
+#include "Pawn.h"
 #include <iostream>
 
 
@@ -19,11 +20,18 @@ Board::Board(){
     initializeStandardBoard();
 
 }
-Board::~Board() = default; // sigh. forward declaration needs this so piece can fully be defined.
 
 void Board::initializeStandardBoard() {
     //white pieces (bottom)
-    
+    grid[1][0] = std::make_unique<Pawn>(true);
+    grid[1][1] = std::make_unique<Pawn>(true);
+    grid[1][2] = std::make_unique<Pawn>(true);
+    grid[1][3] = std::make_unique<Pawn>(true);
+    grid[1][4] = std::make_unique<Pawn>(true);
+    grid[1][5] = std::make_unique<Pawn>(true);
+    grid[1][6] = std::make_unique<Pawn>(true);
+    grid[1][7] = std::make_unique<Pawn>(true);
+
     grid[0][0] = std::make_unique<Rook>(true);
     grid[0][1] = std::make_unique<Knight>(true);
     grid[0][2] = std::make_unique<Bishop>(true);
@@ -33,6 +41,15 @@ void Board::initializeStandardBoard() {
     grid[0][7] = std::make_unique<Rook>(true);
 
     //black pieces (top)
+    grid[6][0] = std::make_unique<Pawn>(false);
+    grid[6][1] = std::make_unique<Pawn>(false);
+    grid[6][2] = std::make_unique<Pawn>(false);
+    grid[6][3] = std::make_unique<Pawn>(false);
+    grid[6][4] = std::make_unique<Pawn>(false);
+    grid[6][5] = std::make_unique<Pawn>(false);
+    grid[6][6] = std::make_unique<Pawn>(false);
+    grid[6][7] = std::make_unique<Pawn>(false);
+
     grid[7][0] = std::make_unique<Rook>(false);
     grid[7][1] = std::make_unique<Knight>(false);
     grid[7][2] = std::make_unique<Bishop>(false);
@@ -63,6 +80,6 @@ void Board::printBoard() const{
 const Piece* Board::getPiece(int startX, int startY) const{
     return (grid[startX][startY].get());
 }
-bool Board::isEmpty(int xcord, int ycord){
+bool Board::isEmpty(int xcord, int ycord) const{
     return (getPiece(xcord,ycord) == nullptr);
 }
