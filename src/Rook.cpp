@@ -55,4 +55,5 @@ bool Rook::isValidMove(int startX, int startY, int endX, int endY, const Board& 
         // can only take enemy piece
         return (target->getIsWhite() != this->isWhite);
     }
-    }
+}
+//MUST remember to implement castling logic once I have added kings. TeeHee super fun stuff cant wait
