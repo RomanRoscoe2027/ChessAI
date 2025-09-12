@@ -33,7 +33,7 @@ bool Knight::isValidMove(int startX, int startY, int endX, int endY, const Board
         return true;
     }
     if (target == nullptr) {
-        return ;
+        return true;
     }
     else {return false;}      
 }

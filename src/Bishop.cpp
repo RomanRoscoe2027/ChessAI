@@ -13,10 +13,9 @@ bool Bishop::isValidMove(int startX, int startY, int endX, int endY, const Board
         int stepX = (dX < 0 ? -1 : 1);
         
         for (int i = 1; i < abs(dX); i++) {
-            if (!grid.isEmpty(startX+stepX, startY + stepY)) {
+            if (!grid.isEmpty(startX+i*stepX, startY+i*stepY)) {
                 return false;
-                stepX = stepX*i;
-                stepY= stepY*i;
+
             }
         }
     }
