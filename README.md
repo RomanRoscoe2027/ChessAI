@@ -25,10 +25,8 @@ Planned features include:
 - **Full Chess Engine**
   - Complete and optimized move generation
   - Turn order, check/checkmate detection, castling, en passant
-- **AI Capabilities**
-  - Minimax search with alpha-beta pruning
-  - Configurable difficulty levels
-- **GUI**
+
+- **GUI* (goal)
   - Cross-platform graphical user interface
   - Potential frameworks: **SDL2** or **Qt**
   - Drag-and-drop piece movement
