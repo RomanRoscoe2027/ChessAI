@@ -10,7 +10,7 @@ public:
     // need to know if white or black to determine symbol as well
     bool isValidMove(int startX, int startY, int endX, int endY, const Board& grid) const override; 
     //declare move logic
-    
+    bool rookHasMoved(bool first_move) const;
 
 };
 
