@@ -3,15 +3,10 @@
 
 class Board;
 
+#include "Types.h"
+
 #include <string>
-enum class PieceType {
-    PAWN,
-    ROOK,
-    KNIGHT,
-    BISHOP,
-    QUEEN,
-    KING
-};
+
 class Piece {
 protected:
     char symbol; //classifies piece type
