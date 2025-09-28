@@ -15,7 +15,7 @@ add_library(chess STATIC
     src/AI.cpp
     src/Bishop.cpp
     src/Board.cpp
-    src/Game.cpp
+    src/GameState.cpp
     src/King.cpp
     src/Knight.cpp
     src/Pawn.cpp

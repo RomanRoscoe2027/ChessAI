@@ -1,7 +1,7 @@
 #include "Knight.h"
 
 Knight::Knight(bool isWhite)
-    : Piece(isWhite ? 'K' : 'k', isWhite, PieceType::KNIGHT){}
+    : Piece(isWhite ? 'N' : 'n', isWhite, PieceType::KNIGHT){}
 
 
 //map out knight movement, moves in L shape

@@ -6,6 +6,7 @@
 #include <cstdint>
 #include "Type.h"
 #include "Board.h"
+#include <memory>
 
 class GameState {
 public:
@@ -36,12 +37,21 @@ private:
         PieceType captured_type{PieceType::NONE};
         
         Square captured_on{64};
+        // store the captured piece so undo restores exact object
+        std::unique_ptr<Piece> captured_piece{nullptr};
         
     };
 
     Board board_{};
     Color stm_{Color::WHITE};
     std::vector<StateDelta> history_; 
+public:
+    // small helper to print the internal board
+    void printBoard() const { board_.printBoard(); }
+    // return side to move
+    Color sideToMove() const { return stm_; }
+    // quick legality check with reason string
+    bool canMove(const Move& m, std::string& reason) const;
 };
 
 #endif // GAMESTATE_H
