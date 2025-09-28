@@ -13,6 +13,10 @@ Prerequisites
 - make or ninja
 
 Build (CMake)
+# clone repo
+git clone https://github.com/<your-username>/ChessAI.git
+cd ChessAI
+
 1. From the project root, configure the build directory:
 
 ```bash
@@ -58,6 +62,7 @@ Limitations (important)
 	- Piece `isValidMove(...)` implementations are basic; sliding pieces may not check all pin situations.
 
 How to play (step-by-step)
+
 1. Run the CLI:
 
 ```bash
@@ -75,6 +80,30 @@ Black> e7e5
 <board prints showing black pawn moved>
 White> g1f3
 <board prints showing knight moved>
+
+Board will appear as:
+8 r n b q k b n r
+7 p p p p p p p p
+6 . . . . . . . .
+5 . . . . . . . .
+4 . . . . . . . .
+3 . . . . . . . .
+2 P P P P P P P P
+1 R N B Q K B N R
+  a b c d e f g h
+
+POST MOVE 1:
+
+8 r n b q k b n r
+7 p p p p p p p p
+6 . . . . . . . .
+5 . . . . . . . .
+4 . . . . P . . .
+3 . . . . . . . .
+2 P P P P . P P P
+1 R N B Q K B N R
+  a b c d e f g h
+
 ```
 
 Where to extend the project
@@ -84,3 +113,12 @@ Where to extend the project
 - Add FEN import/export and test suites for move generation.
 
 
+---
+
+## Recruiter Note
+This project is an educational demo showcasing modern C++ (RAII, unique_ptr, OOP). 
+It’s not intended as a competitive chess engine but demonstrates 
+design patterns and modular architecture.
+
+Building this has already taken 80+ hours of focused development — more than I expected — 
+but the process has been rewarding and I continue extending it toward full chess rules.
