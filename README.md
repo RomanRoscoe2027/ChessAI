@@ -82,6 +82,9 @@ White> g1f3
 <board prints showing knight moved>
 ```
 Board will appear as:
+
+
+
 ![Chess board demo](images/board.png)
 
 
