@@ -1,8 +1,3 @@
-# ChessAI — Demo README
-
-This repository contains a small C++ chess engine and a minimal CLI demo. This README explains how to build and run the demo using CMake, how to run a quick single-file compile.
-
-Quick summary
 # ChessAI (main)
 
 This repository contains a small C++ chess engine and a minimal command-line interface (CLI) implemented in `main`. This README explains how the code is organised, what the current build produces, how to run the CLI, and how to play with the current functionality on the `main` branch.
