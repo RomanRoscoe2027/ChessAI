@@ -27,26 +27,26 @@ enum MoveFlags : uint8_t {
     KingSideCastle   = 1u << 3,
     QueenSideCastle  = 1u << 4,
     Promotion        = 1u << 5,
-    Pin              = 1u << 6,  // mover was pinned in the pre-move position
-    // (bit 7 free for future use)
+    Pin              = 1u << 6,  //mover was pinned in the pre-move position
+    //(bit 7 free for future use)
     
 };
 
 
 using Square = std::uint8_t;                 // 0..63
 
-// Encode/decode (keep inline in header for zero call overhead)
+//Encode/decode (keep inline in header for zero call overhead)
 inline Square encode_square(int x, int y)      { return Square(y * 8 + x); }
 inline constexpr int    square_x(Square s)               { return s % 8; }
 inline constexpr int    square_y(Square s)               { return s / 8; }
-/*didn't understand what the point of all this was at first, I now understand,
-essentially boiling down our 4 ints which were about 32 bytes, to 2 8 bit
+/*boiling down our 4 ints which were about 32 bytes, to 2 8 bit
 numbers for sq_x and sq_y*/
 
 struct Move {
+    //creating Move object
     Square from = 0;  //endX and endY
     Square to = 0;   //startX and startY
-    //creating Move object
+    
     PieceType moved = PieceType::NONE;
     PieceType captured = PieceType::NONE;
     PieceType promo = PieceType::NONE;
